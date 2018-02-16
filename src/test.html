@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Tooltip - Custom Styling</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script>
+  $( function() {
+    $( document ).tooltip({
+      position: {
+        my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( "arrow" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+    });
+  } );
+  </script>
+    <style>
+  .ui-tooltip, .arrow:after {
+    background: black;
+    border: 2px solid white;
+  }
+  .ui-tooltip {
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    font: bold 14px "Helvetica Neue", Sans-Serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 7px black;
+  }
+  .arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+  }
+  .arrow.top {
+    top: -16px;
+    bottom: auto;
+  }
+  .arrow.left {
+    left: 20%;
+  }
+  .arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .arrow.top:after {
+    bottom: -20px;
+    top: auto;
+  }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+
+    </div>
+</nav>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Casp1783 Tech HTML</h1>
+        <p>HTML der bliver lavet i Tech 2.semester</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/NeweggImage/ProductImage/19-116-899-03.jpg"  id="cpu" title="CPU" class="img-thumbnail">
+        </div>
+        <div class="col-sm">
+            <img src="https://tekspecz.files.wordpress.com/2013/02/ram4.png" id="ram" title="RAM" class="img-thumbnail">
+        </div>
+        <div class="col-sm">
+            <img src="https://cf-security.dk/media/cache/product_original/product-images/58/19/wd%20purple%206tb%2031479292580.2132.jpg" id="HDD" title="Hard Disk Drive" class="img-thumbnail">
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top:20px">
+    <div class="row">
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/ProductImage/20-147-373-09.jpg"  id="SSD" title="SSD" class="img-thumbnail">
+        </div>
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/NeweggImage/ProductImage/17-139-200-V08.jpg" id="PSU" title="PSU" class="img-thumbnail">
+        </div>
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/ProductImage/14-126-169-V01.jpg" id="gfx" title="graphic card" class="img-thumbnail">
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-top:20px">
+    <div class="row">
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/ProductImage/29-102-003-06.jpg"  id="SoundCard" title="Sound Card" class="img-thumbnail">
+        </div>
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/ProductImage/33-114-140-01.jpg" id="NetwordCard" title="Netword Card" class="img-thumbnail">
+        </div>
+        <div class="col-sm">
+            <img src="https://images10.newegg.com/ProductImage/35-103-205-01.jpg" id="cpuCooler" title="cpu cooler" class="img-thumbnail">
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</body>
+</html>
